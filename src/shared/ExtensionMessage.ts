@@ -56,6 +56,11 @@ export interface IndexingStatus {
 	totalItems: number
 	currentItemUnit?: string
 	workspacePath?: string
+	manifest?: {
+		totalFiles: number
+		totalChunks: number
+		lastUpdated: string
+	}
 }
 
 export interface IndexingStatusUpdateMessage {
@@ -155,6 +160,8 @@ export interface ExtensionMessage {
 		| "dismissedUpsells"
 		| "showTimestamps" // kilocode_change
 		| "organizationSwitchResult"
+		| "deleteManagedBranchIndex" // kilocode_change
+		| "deleteManagedProjectIndex" // kilocode_change
 	text?: string
 	// kilocode_change start
 	payload?:
