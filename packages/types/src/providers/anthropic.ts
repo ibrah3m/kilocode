@@ -152,6 +152,20 @@ export const anthropicModels = {
 		description:
 			"Claude Haiku 4.5 delivers near-frontier intelligence at lightning speeds with extended thinking, vision, and multilingual support.",
 	},
+	"moonshotai/Kimi-K2-Thinking": {
+		maxTokens: 16384,
+		contextWindow: 262_144,
+		supportsImages: false,
+		supportsPromptCache: true,
+		inputPrice: 0.6, // $0.60 per million input tokens
+		outputPrice: 2.5, // $2.50 per million output tokens
+		cacheWritesPrice: 0, // $0 per million tokens (cache miss)
+		cacheReadsPrice: 0.15, // $0.15 per million tokens (cache hit)
+		supportsReasoningBudget: true,
+		requiredReasoningBudget: true,
+		description:
+			"Moonshot AI's Kimi K2 Thinking model with extended reasoning capabilities for complex problem solving.",
+	},
 } as const satisfies Record<string, ModelInfo>
 
 export const ANTHROPIC_DEFAULT_MAX_TOKENS = 8192
